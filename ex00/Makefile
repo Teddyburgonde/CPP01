@@ -12,9 +12,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #================== SOURCES =================#
 
-SRCS = newZombie.cpp \
-	randomChump.cpp \
-	Zombie.cpp \
+SRCS = Zombie.cpp \
 	main.cpp
 
 #============== OBJECT FILES ================#
