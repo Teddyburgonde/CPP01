@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 07:50:52 by tebandam          #+#    #+#             */
-/*   Updated: 2024/07/28 16:05:45 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:19:33 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
     Zombie(); // Constructor
     ~Zombie(); // Destructor
     void            announce(void);
-
+    void            randomChump(std::string name);
     std::string     name;
 
 
