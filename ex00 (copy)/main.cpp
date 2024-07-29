@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 07:50:52 by tebandam          #+#    #+#             */
-/*   Updated: 2024/07/29 05:59:37 by tebandam         ###   ########.fr       */
+/*   Created: 2024/07/28 08:00:56 by tebandam          #+#    #+#             */
+/*   Updated: 2024/07/28 16:22:19 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
 
-/*Created Zombie class*/
-class Zombie 
+int main()
 {
-    public:
-    Zombie(); // Constructor
-    ~Zombie(); // Destructor
-    void            announce(void);
-    void            randomChump(std::string name);
-
-    private:
-    /*Attribut name*/
-    std::string     name;
-
-
-};
-
-#endif
+    Zombie zombie;
+    zombie.randomChump("bryant");
+    std::cout << std::endl;
+    zombie.announce();
+}
