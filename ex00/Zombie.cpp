@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 07:51:47 by tebandam          #+#    #+#             */
-/*   Updated: 2024/07/28 16:28:18 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/07/29 15:15:24 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,26 @@
 
 Zombie::Zombie()
 {
-    Zombie::name = ""; 
+    Zombie::_name = "";
 }
 
 Zombie::~Zombie()
 {
     // If the name is not empty
-    if (name.empty() == 0)
-        std::cout << "Zombie named" << name << "died" << std::endl;
+    if (_name.empty() == 0)
+        std::cout << "Zombie named " << _name << " died" << std::endl;
 } 
 
 void    Zombie::announce(void)
 {
     // if no name
-    if (Zombie::name[0].empty() == 1)
+    if (Zombie::_name.empty() == 1)
         std::cout << "Zombie undefined" << std::endl;
-    std::cout << Zombie::name << ": BraiiiiiinnnzzzZ..." << std::endl;
+    std::cout << Zombie::_name << ": BraiiiiiinnnzzzZ..." << std::endl;
 }
 
-void	Zombie::randomChump(std::string name)
+void    Zombie::setName(std::string name)
 {
-    Zombie newZombie;
-    newZombie.name = name;
-    newZombie.announce();
+    _name = name;
 }
 
-
-// Zombie*	Zombie::newZombie(std::string name)

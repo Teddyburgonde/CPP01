@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 07:50:52 by tebandam          #+#    #+#             */
-/*   Updated: 2024/07/29 14:53:44 by tebandam         ###   ########.fr       */
+/*   Created: 2024/07/29 11:10:35 by tebandam          #+#    #+#             */
+/*   Updated: 2024/07/29 14:50:37 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-
-/*Created Zombie class*/
-class Zombie 
+Zombie *newZombie(std::string name)
 {
-    public:
-    Zombie(); // Constructor
-    ~Zombie(); // Destructor
-    void            announce(void);
-    //SETTERS
-    void    setName(std::string name);
-    private:
-    /*Attribut name*/
-    std::string     _name;
-    
+    Zombie *zombiePointer;
 
-
-};
-
-#endif
+    zombiePointer = new Zombie;
+    zombiePointer->setName(name);
+    return (zombiePointer);
+}
