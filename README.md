@@ -6,3 +6,7 @@
 3. 
 
 ```
+
+Mercredi faire ex01 , ex02 
+Jeudi faire ex03 ex04
+vendredi ex05
