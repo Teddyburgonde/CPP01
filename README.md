@@ -1,3 +1,20 @@
+✅❌
+
+Mercredi : 
+ex01✅
+ex02 ✅
+
+
+
+Jeudi : 
+ex03
+ex04
+
+vendredi : 
+ex05
+
+
+
 **EX00**
 
 ```c
@@ -28,9 +45,46 @@ Utiliser la fonction announce sur le zombie(Objet) que vous venez de creer.
 ```
 
 
+**EX02**
+
+```c
+std::string s1 = "HI THIS IS BRAIN";
+
+    std::string *stringPTR = &s1;
+    
+    std::string &stringREF = s1;
+    
+    
+    // Adresse memoire de la variable string
+    std::cout << &s1 <<std::endl;
+    
+    // Adresse memoire détenue par stringPTR 
+    std::cout << stringPTR <<std::endl;
+    
+    // Adresse memoire détenue par stringREF
+    std::cout << &stringREF <<std::endl;
+
+    // La valeur de la variable string 
+    std::cout << s1 << std::endl;
+
+    // La valeur pointer par stringPTR
+    std::cout << *stringPTR <<std::endl;
+
+    // La valeur indiqué par stringREF
+    std::cout << stringREF <<std::endl;
+```
 
 ✅❌
 
-Mercredi faire ex01 , ex02 
-Jeudi faire ex03 ex04
-vendredi ex05
+Mercredi : 
+ex01✅
+ex02 ✅
+
+
+
+Jeudi : 
+ex03
+ex04
+
+vendredi : 
+ex05
