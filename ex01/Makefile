@@ -13,8 +13,6 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 #================== SOURCES =================#
 
 SRCS = 	Zombie.cpp \
-		newZombie.cpp \
-		ramdomChump.cpp \
 		zombieHorde.cpp \
 		main.cpp
 

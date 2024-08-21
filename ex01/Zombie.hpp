@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 07:50:52 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/20 16:44:28 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/21 09:43:36 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Zombie
     void            announce(void);
     //SETTERS
     void    setName(std::string name);
-    Zombie* zombieHorde( int N, std::string name );
+
     private:
     /*Attribut name*/
     std::string     _name;
