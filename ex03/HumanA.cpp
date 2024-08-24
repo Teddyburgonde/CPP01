@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 23:29:01 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/08/23 00:25:07 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/08/24 16:22:19 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(const std::string& name, Weapon& weapon) 
+HumanA::HumanA(const std::string& name, Weapon& weapon)  : name(name), weapon(weapon)
 {
-    // : name(name), weapon(weapon) {}  // Utilisation de la liste
+    
 }
 
 HumanA::~HumanA() 
@@ -24,6 +24,5 @@ HumanA::~HumanA()
 
 void HumanA::attack()
 {
-                                                // getType ????
     std::cout << name << " attacks with their " << weapon.getType();
 }

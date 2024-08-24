@@ -74,6 +74,15 @@ std::string s1 = "HI THIS IS BRAIN";
     std::cout << stringREF <<std::endl;
 ```
 
+**EX03**
+
+HumanA::HumanA(const std::string& name, Weapon& weapon)  : name(name), weapon(weapon)
+{
+    
+}
+
+
+
 ✅❌
 
 Mercredi : 
