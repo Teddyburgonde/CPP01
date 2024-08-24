@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 07:27:38 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/22 22:34:45 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/08/24 19:12:48 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(){}
-
+Weapon::Weapon(std::string){}
 Weapon::~Weapon(){}
 
 const std::string& Weapon::getType(void) const

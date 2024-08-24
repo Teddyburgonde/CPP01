@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 07:27:41 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/22 08:09:32 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/24 19:08:41 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon {
 	std::string type;
 
 	public:
-	Weapon();
+	Weapon(std::string description);
 	~Weapon();
 	
 	public:

@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 22:52:32 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/08/24 16:25:37 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/24 19:25:06 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ class HumanB
     Weapon& weapon;
 
     public :
+    HumanB(const std::string& name);
     HumanB(const std::string& name, Weapon& weapon);
     ~HumanB();
 
     public:
     void    attack();
+    void    setWeapon(std::string type);
 };
 
 #endif
