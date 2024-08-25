@@ -6,18 +6,12 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 07:26:38 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/24 19:01:26 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/25 08:30:09 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-
-
-// void Weapon::setType(const std::string& nameType)
-// {
-//     type = nameType;
-// }
 
 int main()
 {

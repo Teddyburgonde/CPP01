@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 07:27:41 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/24 19:08:41 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/25 09:14:29 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WEAPON_HPP
 
 #include <string>
+#include <iostream>
 
 class Weapon {
 

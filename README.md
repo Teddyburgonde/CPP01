@@ -76,7 +76,13 @@ std::string s1 = "HI THIS IS BRAIN";
 
 **EX03**
 
-HumanA::HumanA(const std::string& name, Weapon& weapon)  : name(name), weapon(weapon)
+HumanB::HumanB(const std::string& name) : name(name), weapon(NULL) 
+{
+    
+}
+
+
+HumanB::HumanB(const std::string& name, Weapon& weapon) : name(name), weapon(&weapon)
 {
     
 }
@@ -85,15 +91,9 @@ HumanA::HumanA(const std::string& name, Weapon& weapon)  : name(name), weapon(we
 
 ✅❌
 
-Mercredi : 
-ex01✅
+ex00 ✅
+ex01 ✅
 ex02 ✅
-
-
-
-Jeudi : 
-ex03
-ex04
-
-vendredi : 
-ex05
+ex03 ✅
+ex04 ❌
+ex05 ❌
