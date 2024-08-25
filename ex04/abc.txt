@@ -1,0 +1,3 @@
+Salut je suis a la premiere ligne
+Bonjour je suis a la deuxieme ligne
+Hola je suis a la troisieme ligneThis text is appended to the file.

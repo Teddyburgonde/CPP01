@@ -88,6 +88,20 @@ HumanB::HumanB(const std::string& name, Weapon& weapon) : name(name), weapon(&we
 }
 
 
+**EX04**
+
+
+
+Créez un programme qui prend trois paramètres dans l'ordre suivant : un nom de fichier, puis deux chaînes de caractères, s1 et s2.
+Il ouvrira le fichier <nom de fichier> et copiera son contenu dans un nouveau fichier <nom de fichier>.replace, en remplaçant chaque occurrence de s1 par s2.
+
+L'utilisation des fonctions de manipulation de fichiers en C est interdite et sera considérée comme de la triche.
+Toutes les fonctions membres de la classe std::string sont autorisées, à l'exception de replace. Utilisez-les judicieusement !
+
+Bien entendu, gérez les entrées inattendues et les erreurs. Vous devez créer et soumettre vos propres tests pour vous assurer que votre programme fonctionne comme prévu.
+
+
+
 
 ✅❌
 
