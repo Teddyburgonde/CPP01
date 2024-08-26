@@ -3,17 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 15:50:31 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/25 23:06:57 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/08/26 16:50:44 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <fstream> 
+#include <fstream>
 
 using namespace std;
+
+
+// 1 ere 
+// https://github.com/LucieLeBriquer/cpp01/blob/main/ex04/main.cpp
+
+// 2eme
+// https://github.com/madebypixel02/CPP-Module-01/blob/main/ex04/main.cpp
+
+
 
 /*!
 (Déjà fait) : Ouvrir le fichier d'entrée et vérifier qu'il s'ouvre correctement.
@@ -36,86 +45,92 @@ des tests pour vérifier
 le bon fonctionnement du programme.
 */
 
-
-/*
-std::string::find : 
-Pour localiser la position de la première 
-occurrence de s1 dans la ligne.
-
-std::string::substr : 
-Pour extraire des parties de la ligne, 
-comme la portion avant s1 et la portion après s1.
-
-std::string::append ou l'opérateur += : 
-Pour construire la nouvelle ligne en concaténant 
-les parties extraites avec s2.
-
-std::string::length : Pour obtenir la 
-longueur de s1, ce qui te permet de 
-sauter la partie remplacée et continuer à 
-chercher d'autres occurrences.
-
-*/
-
-
 /*
 
 Pour remplacer toutes les occurrences de s1 par s2 dans chaque ligne sans utiliser std::string::replace, tu peux utiliser les fonctions suivantes :
 
-    std::string::find : Pour localiser la position de la première occurrence de s1 dans la ligne.
+    std::string::find : Pour localiser la position
+	de la première occurrence de s1 dans la ligne.
 
-    std::string::substr : Pour extraire des parties de la ligne, comme la portion avant s1 et la portion après s1.
+    std::string::substr : Pour extraire des parties de la ligne,
+	 comme la portion avant s1 et la portion après s1.
 
-    std::string::append ou l'opérateur += : Pour construire la nouvelle ligne en concaténant les parties extraites avec s2.
+    std::string::append ou l'opérateur += :
+	 Pour construire la nouvelle ligne en concaténant les parties extraites avec s2.
 
-    std::string::length : Pour obtenir la longueur de s1, ce qui te permet de sauter la partie remplacée et continuer à chercher d'autres occurrences.
+    std::string::length : Pour obtenir la longueur de s1,
+	 ce qui te permet de sauter la partie remplacée et continuer à chercher d'autres occurrences.
 
-Ces fonctions combinées te permettront de parcourir la ligne, trouver chaque occurrence de s1, la remplacer par s2, et reconstruire la ligne avec les modifications nécessaires.
-
-
+Ces fonctions combinées te 
+permettront de parcourir la ligne, trouver 
+chaque occurrence de s1, la remplacer par s2, et 
+reconstruire la ligne avec les modifications nécessaires.
 
 */
 
 
+// std::string::npos si la chaine n'as pas etait trouvée
+
 
 //int ft_open(std::string name_of_file, char *s1, char *s2)
 // & permet de ne pas creer de nouvelle copie dans la memoire
-void ft_open(const std::string& name_of_file, char *s1, char *s2)
+// void ft_open(const std::string& name_of_file, char *s1)
+// {
+// 	std::string line;
+// 	int pos_s1;
+// 	ifstream inputFile(name_of_file.c_str());
+
+// 	if (!inputFile.is_open())
+// 	{
+// 		cerr << "Error opening the file!" << endl;
+// 		return ;
+// 	}
+// 	while (getline(inputFile, line))
+// 	{
+// 		//cout << line << endl;
+
+// 		pos_s1 = line.find(s1);
+// 		if (pos_s1 != 0)
+// 		{
+// 			cout << "find: " << line << endl;
+// 		}
+// 	}
+// 	inputFile.close();
+// }
+
+// int	main(void)
+// {
+// 	char s1[] = "bonjour";
+// 	ft_open(std::string("abc.txt"), s1);
+// }
+
+
+
+
+
+
+
+int	print_error(void)
 {
-	
-	string	line;
-	
-	// Open file
-	ifstream inputFile(name_of_file);
-	// Verif open
-	if (!inputFile.is_open())
-	{
-		cerr << "Error opening the file!" << endl;
-		return ;
-	}
-	// lire le fichier et on lenvoie sur la sortie standard
-	while (getline(inputFile, line))
-	{
-		if (s1 == line || s2 == line)
-		{
-			cout << "Merci" << endl;
-		}
-		cout << "valeur de s1:" << s1 << endl;
-		cout << "valeur de line:" << line << endl;
-		cout << line << endl;
-	}
-	// close
-	// cout << "valeur de line[0]" << line << endl;
-	// if (s1[0] == line[0] || s2 == line)
-	// {
-	// 	cout << "Bingo" << endl;
-	// }
-	inputFile.close();
+	cerr << "Wrong number of arguments" << endl;	
+	return (1);
 }
 
-int	main(void)
+
+int	main(int argc, char **argv)
 {
-	char s1[] = "bonjour";
-	char s2[] = "aurevoir";
-	ft_open(std::string("abc.txt"), s1, s2);
+	(void)argv;
+	if (argc != 4)
+		return (print_error());
+	// file = argv[1];
+	// s1 = argv[2];
+	// s2 = argv[3];
+	// fileIn.open(file.c_str()); 
 }
+
+// ifstream inputFile(name_of_file.c_str());
+// 	if (!inputFile.is_open())
+// 	{
+// 		cerr << "Error opening the file!" << endl;
+// 		return ;
+// 	}

@@ -115,6 +115,29 @@ Bien entendu, gérez les entrées inattendues et les erreurs. Vous devez créer 
 
 
 
+1. Ouvrir le fichier d'entrée et vérifier qu'il s'ouvre correctement.
+(Déjà fait) : Lire le fichier ligne par ligne.
+
+2. Remplacer toutes les occurrences de 
+s1 par s2 dans chaque ligne.
+
+3. Ouvrir un nouveau 
+fichier pour écrire le résultat modifié.
+
+4. Fermer le fichier 
+d'entrée. 
+
+5. Fermer également le fichier de sortie.
+
+6. Ajouter une gestion 
+des erreurs pour les chaînes s1 et s2, et créer
+des tests pour vérifier 
+le bon fonctionnement du programme.
+
+ifstream inputFile(name_of_file.c_str());
+c_str() converti un string en char *
+
+
 ✅❌
 
 ex00 ✅
