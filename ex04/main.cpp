@@ -6,10 +6,11 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 15:50:31 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/26 16:50:44 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/27 16:28:18 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstddef>
 #include <iostream>
 #include <fstream>
 
@@ -106,31 +107,97 @@ reconstruire la ligne avec les modifications nécessaires.
 
 
 
+// int	print_error(std::string message)
+// {
+// 	cerr << message << endl;	
+// 	return (1);
+// }
 
 
-
-
-int	print_error(void)
-{
-	cerr << "Wrong number of arguments" << endl;	
-	return (1);
-}
-
-
-int	main(int argc, char **argv)
-{
-	(void)argv;
-	if (argc != 4)
-		return (print_error());
-	// file = argv[1];
-	// s1 = argv[2];
-	// s2 = argv[3];
-	// fileIn.open(file.c_str()); 
-}
-
-// ifstream inputFile(name_of_file.c_str());
-// 	if (!inputFile.is_open())
+// int	main(int argc, char **argv)
+// {
+// 	std::ifstream infile;
+// 	std::ofstream outfile;
+// 	std::string file;
+// 	std::string line;
+// 	std::string s1;
+// 	std::string s2;
+// 	size_t pos;
+// 	if (argc != 4)
+// 		return (print_error("Wrong number of arguments"));
+// 	file = argv[1];
+// 	s1 = argv[2];
+// 	s2 = argv[3];
+// 	// ouverture du fichier et c_str converti en char* car open veut un char *
+// 	infile.open(file.c_str());
+// 	if (!infile.is_open())
+// 		return (print_error("Error opening the file!"));
+// 	while (getline(infile, line))
 // 	{
-// 		cerr << "Error opening the file!" << endl;
-// 		return ;
+// 		if (pos)
+// 		//cout << line << endl;
 // 	}
+// 	infile.close();
+// }
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int print_error(const std::string &message) {
+    std::cerr << message << std::endl;
+    return 1;
+}
+
+int main(int argc, char **argv) {
+    std::ifstream infile;
+    std::ofstream outfile;
+    std::string input_file;
+    std::string s1;
+    std::string s2;
+
+    if (argc != 4)
+        return print_error("Wrong number of arguments");
+
+    input_file = argv[1];
+    s1 = argv[2];
+    s2 = argv[3];
+
+    infile.open(input_file.c_str());
+    if (!infile.is_open())
+        return print_error("Error opening the input file!");
+
+    outfile.open("output.txt");
+    if (!outfile.is_open())
+        return print_error("Error opening the output file!");
+
+    std::string line;
+    while (getline(infile, line)) 
+	{
+        std::string new_line;
+        size_t pos = 0;
+        size_t start_pos = 0;
+
+        // line c'est la line actuel dans laquel je cherche
+		// s1 c'est le mot que je cherche dans line
+        while ((pos = line.find(s1, start_pos)) != std::string::npos) 
+		{
+            // Ajouter la partie avant s1
+            new_line += line.substr(start_pos, pos - start_pos);
+            // Ajouter s2 à la place de s1
+            new_line += s2;
+            // Mettre à jour start_pos pour continuer après la fin de s1
+            start_pos = pos + s1.length();
+        }
+
+        // Ajouter le reste de la ligne après la dernière occurrence de s1
+        new_line += line.substr(start_pos);
+
+        // Écrire la nouvelle ligne dans le fichier de sortie
+        outfile << new_line << std::endl;
+    }
+    infile.close();
+    outfile.close();
+
+    return 0;
+}

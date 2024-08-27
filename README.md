@@ -74,6 +74,15 @@ HumanB::HumanB(const std::string& name, Weapon& weapon) : name(name), weapon(&we
 **EX04**
 
 ```c
+
+// ouverture du fichier et c_str converti en char* car open veut un char *
+	infile.open(file.c_str());
+	if (!infile.is_open())
+		return (print_error("Error opening the file!"));
+```
+
+
+```c
 //int ft_open(std::string name_of_file, char *s1, char *s2)
 // & permet de ne pas creer de nouvelle copie dans la memoire
 void ft_open(const std::string& name_of_file)
