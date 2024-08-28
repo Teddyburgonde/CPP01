@@ -72,79 +72,14 @@ HumanB::HumanB(const std::string& name, Weapon& weapon) : name(name), weapon(&we
 
 
 **EX04**
-
-```c
-
-// ouverture du fichier et c_str converti en char* car open veut un char *
-	infile.open(file.c_str());
-	if (!infile.is_open())
-		return (print_error("Error opening the file!"));
-```
-
-
-```c
-//int ft_open(std::string name_of_file, char *s1, char *s2)
-// & permet de ne pas creer de nouvelle copie dans la memoire
-void ft_open(const std::string& name_of_file)
-{
-	
-	string	line;
-	
-	// Open file
-	ifstream inputFile("abc.txt");
-	// Verif open
-	if (!inputFile.is_open())
-	{
-		cerr << "Error opening the file!" << endl;
-		return ;
-	}
-	// lire le fichier et on lenvoie sur la sortie standard
-	while (getline(inputFile, line))
-	{
-		cout << line << endl;
-	}
-	// close
-	inputFile.close();
-}
-
-int	main(void)
-{
-	
-	ft_open(std::string("abc.txt"));
-}
-```
-
-Créez un programme qui prend trois paramètres dans l'ordre suivant : un nom de fichier, puis deux chaînes de caractères, s1 et s2.
-Il ouvrira le fichier <nom de fichier> et copiera son contenu dans un nouveau fichier <nom de fichier>.replace, en remplaçant chaque occurrence de s1 par s2.
-
-L'utilisation des fonctions de manipulation de fichiers en C est interdite et sera considérée comme de la triche.
-Toutes les fonctions membres de la classe std::string sont autorisées, à l'exception de replace. Utilisez-les judicieusement !
-
-Bien entendu, gérez les entrées inattendues et les erreurs. Vous devez créer et soumettre vos propres tests pour vous assurer que votre programme fonctionne comme prévu.
-
-
-
-1. Ouvrir le fichier d'entrée et vérifier qu'il s'ouvre correctement.
-(Déjà fait) : Lire le fichier ligne par ligne.
-
-2. Remplacer toutes les occurrences de 
-s1 par s2 dans chaque ligne.
-
-3. Ouvrir un nouveau 
-fichier pour écrire le résultat modifié.
-
-4. Fermer le fichier 
-d'entrée. 
-
-5. Fermer également le fichier de sortie.
-
-6. Ajouter une gestion 
-des erreurs pour les chaînes s1 et s2, et créer
-des tests pour vérifier 
-le bon fonctionnement du programme.
-
-ifstream inputFile(name_of_file.c_str());
-c_str() converti un string en char *
+1. input_file = argv[1] s1 = argv[2] s2 = argv[3]
+2. Ouvrir l'infile 
+3. Verif de l'open infile
+4. Lire le contenu du fichier 
+5. Recherche le contenu de s1 dans le fichier avec find
+6. Remplacer s1 par le contenu de s2 
+7. Ecrire le contenu de line dans le fichier outfile.
+8. donner a outfile , c'est le nom de infile + .replace
 
 
 ✅❌
@@ -153,5 +88,5 @@ ex00 ✅
 ex01 ✅
 ex02 ✅
 ex03 ✅
-ex04 ❌
+ex04 ✅
 ex05 ❌

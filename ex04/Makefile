@@ -1,6 +1,6 @@
 #=================== NAME ===================#
 
-NAME = find
+NAME = find_and_replace
 
 #================ COMPILATOR ================#
 
