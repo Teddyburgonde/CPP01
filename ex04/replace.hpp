@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:36:20 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/28 13:12:31 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/28 15:35:36 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstddef>
 
-class findAndReplace {
+class Replace {
 
 	public:
     int	open_outfile(std::ofstream& outfile, std::string output_file);
     int	open_infile(std::ifstream& infile, std::string input_file);
     int	print_error(const std::string &message);
 
-}
-
+};
 
 
 #endif

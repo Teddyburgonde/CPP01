@@ -6,42 +6,15 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 15:50:31 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/28 13:05:58 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/28 15:36:47 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstddef>
-#include <iostream>
-#include <fstream>
-
-using namespace std;
-
 #include "replace.hpp"
-
-int print_error(const std::string &message) 
-{
-    std::cerr << message << std::endl;
-    return 1;
-}
-
-int    open_infile(std::ifstream& infile, std::string input_file)
-{
-    infile.open(input_file.c_str());
-    if (!infile.is_open())
-        return (1);
-    return (0);
-}
-
-int    open_outfile(std::ofstream& outfile, std::string output_file)
-{
-    outfile.open(output_file.c_str());
-    if (!outfile.is_open())
-        return (1);
-    return (0);
-}
 
 int main(int argc, char **argv) 
 {
+    using namespace std;
     std::ifstream infile;
     std::ofstream outfile;
     std::string input_file;
