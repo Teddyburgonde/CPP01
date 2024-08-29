@@ -81,6 +81,60 @@ HumanB::HumanB(const std::string& name, Weapon& weapon) : name(name), weapon(&we
 7. Ecrire le contenu de line dans le fichier outfile.
 8. donner a outfile , c'est le nom de infile + .replace
 
+```c
+
+int main(int argc, char **argv) 
+{
+    Replace replace;
+
+    using namespace std;
+    std::ifstream infile;
+    std::ofstream outfile;
+    std::string input_file;
+    std::string output_file;
+    std::string s1;
+    std::string s2;
+    std::string line;
+    size_t  pos;
+    
+    pos = 0;
+    if (argc != 4)
+        return replace.print_error("Wrong number of arguments");
+
+    input_file = argv[1];
+    s1 = argv[2];
+    s2 = argv[3];
+    // Créer le nom du fichier de sortie
+    output_file = input_file + ".replace";
+    if (replace.open_infile(infile, input_file) == 1)
+         return (replace.print_error("Error opening the input file!"));
+    if (replace.open_outfile(outfile, output_file) == 1)
+        return (replace.print_error("Error opening the output file!"));
+    while (getline(infile, line))
+    {
+        pos = 0;
+        while ((pos = line.find(s1, pos)) != std::string::npos)
+	    {
+            line.erase(pos, s1.length()); // supprine s1 de la ligne
+            line.insert(pos, s2); // insert le contenu de s2 a la place
+            pos += s2.length(); // Avance la position pour éviter de trouver la même occurrence
+        }
+        outfile << line << std::endl;  // Écrire la ligne modifiée dans le fichier de sortie
+    }
+    infile.close();
+    outfile.close();
+
+    return (0);
+}
+
+
+```
+
+**EX05**
+
+Le but de l'exercice est d'apprendre à utiliser des pointeurs sur fonctions 
+
+
 
 ✅❌
 
