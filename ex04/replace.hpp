@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:36:20 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/28 15:35:36 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:03:48 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 #include <cstddef>
 
 class Replace {
+    
+    public:
+    Replace();
+    ~Replace();
 
 	public:
     int	open_outfile(std::ofstream& outfile, std::string output_file);

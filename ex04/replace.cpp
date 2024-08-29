@@ -6,19 +6,23 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:31:04 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/28 15:36:53 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:15:02 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-int print_error(const std::string &message) 
+Replace::Replace(){}
+Replace::~Replace(){}
+
+
+int Replace::print_error(const std::string &message) 
 {
     std::cerr << message << std::endl;
     return 1;
 }
 
-int    open_infile(std::ifstream& infile, std::string input_file)
+int Replace::open_infile(std::ifstream& infile, std::string input_file)
 {
     infile.open(input_file.c_str());
     if (!infile.is_open())
@@ -26,7 +30,7 @@ int    open_infile(std::ifstream& infile, std::string input_file)
     return (0);
 }
 
-int    open_outfile(std::ofstream& outfile, std::string output_file)
+int Replace::open_outfile(std::ofstream& outfile, std::string output_file)
 {
     outfile.open(output_file.c_str());
     if (!outfile.is_open())

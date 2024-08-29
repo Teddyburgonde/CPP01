@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 15:50:31 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/28 15:36:47 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:10:21 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main(int argc, char **argv) 
 {
+    Replace replace;
+
     using namespace std;
     std::ifstream infile;
     std::ofstream outfile;
@@ -26,17 +28,17 @@ int main(int argc, char **argv)
     
     pos = 0;
     if (argc != 4)
-        return print_error("Wrong number of arguments");
+        return replace.print_error("Wrong number of arguments");
 
     input_file = argv[1];
     s1 = argv[2];
     s2 = argv[3];
     // Créer le nom du fichier de sortie
     output_file = input_file + ".replace";
-    if (open_infile(infile, input_file) == 1)
-         return print_error("Error opening the input file!");
-    if (open_outfile(outfile, output_file) == 1)
-        return print_error("Error opening the output file!");
+    if (replace.open_infile(infile, input_file) == 1)
+         return (replace.print_error("Error opening the input file!"));
+    if (replace.open_outfile(outfile, output_file) == 1)
+        return (replace.print_error("Error opening the output file!"));
     while (getline(infile, line))
     {
         pos = 0;
