@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 15:50:31 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/29 13:10:21 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:29:08 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main(int argc, char **argv)
     std::string output_file;
     std::string s1;
     std::string s2;
-    size_t  pos;
     std::string line;
+    size_t  pos;
     
     pos = 0;
     if (argc != 4)
