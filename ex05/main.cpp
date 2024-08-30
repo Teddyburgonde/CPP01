@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:41:04 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/29 18:56:57 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:23:56 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,36 @@ Harl a également une fonction membre publique qui appelle les quatre fonctions 
 
     void complain( std::string level );
 
-L'objectif de cet exercice est d'utiliser des pointeurs sur fonctions membres. Ce n'est pas une suggestion. Harl doit se plaindre sans utiliser une forêt de if/else if/else. Il ne réfléchit pas deux fois !
+L'objectif de cet exercice est d'utiliser des pointeurs sur fonctions membres. Ce n'est pas
+ une suggestion. 
+ Harl doit se plaindre sans utiliser une forêt de if/else if/else.
+  Il ne réfléchit pas deux fois !
 
-Créez et rendez des tests pour montrer que Harl se plaint beaucoup. Vous pouvez utiliser les exemples de commentaires listés ci-dessus ou choisir d'utiliser vos propres commentaires.
+Créez et rendez des tests pour montrer que Harl se plaint beaucoup. 
+Vous pouvez utiliser les exemples de commentaires listés ci-dessus 
+ou choisir d'utiliser vos propres commentaires.
 */
 
+#include "harl.hpp"
+
+int main()
+{
+    Harl harl;
+
+    std::cout << "DeBUG level:" <<std::endl;
+    harl.complain("DEBUG");
+
+    std::cout << "\nINFO level:" << std::endl;
+    harl.complain("INFO");
+    
+    std::cout << "\nWARNING level:" << std::endl;
+    harl.complain("WARNING");
+    
+    std::cout << "\nERROR level:" << std::endl;
+    harl.complain("ERROR");
+    
+    std::cout << "\nUNKNOWN level:" << std::endl;
+    harl.complain("UNKNOWN");
+
+    return 0;
+}
