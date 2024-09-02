@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:31:04 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/29 13:15:02 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:57:44 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Replace::~Replace(){}
 int Replace::print_error(const std::string &message) 
 {
     std::cerr << message << std::endl;
-    return 1;
+    return (1);
 }
 
 int Replace::open_infile(std::ifstream& infile, std::string input_file)

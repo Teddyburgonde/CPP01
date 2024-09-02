@@ -14,7 +14,6 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 SRCS =	harl.cpp \
 		main.cpp \
-		
 
 #============== OBJECT FILES ================#
 

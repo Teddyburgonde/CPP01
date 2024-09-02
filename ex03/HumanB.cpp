@@ -6,19 +6,13 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:48:25 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/25 09:13:26 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/31 16:50:47 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
 HumanB::HumanB(const std::string& name) : name(name), weapon(NULL) 
-{
-    
-}
-
-
-HumanB::HumanB(const std::string& name, Weapon& weapon) : name(name), weapon(&weapon)
 {
     
 }
@@ -31,7 +25,10 @@ HumanB::~HumanB()
 
 void HumanB::attack()
 {
-    std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+    if (weapon)
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+    if (!weapon)
+        std::cout << name << " attacks with their hands" << std::endl;
 }
 
 void HumanB::setWeapon(Weapon& weapon)

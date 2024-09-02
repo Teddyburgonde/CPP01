@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:03:32 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/30 12:25:16 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/31 17:05:48 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,18 @@ void Harl::error(void)
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
-void Harl::complain(std::string level)
+
+void	Harl::complain(std::string level)
 {
-    void (Harl::*funcPtr)() = NULL;
-    if (level == "DEBUG")
-    {
-        funcPtr = &Harl::debug;
-    }
-    else if (level == "INFO")
-    {
-        funcPtr = &Harl::info;
-    }
-    else if (level == "WARNING")
-    {
-        funcPtr = &Harl::warning;
-    }
-    else if (level == "ERROR")
-    {
-        funcPtr = &Harl::error;
-    }
-    
-    if (funcPtr) 
-    {
-        (this->*funcPtr)();
-    }
+	void		(Harl::*ptr_complain[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+
+	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for (int i = 0; i < 4; i++)
+	{
+		if (levels[i] == level)
+		{
+			(this->*ptr_complain[i])();
+			break ;
+		}
+	}
 }

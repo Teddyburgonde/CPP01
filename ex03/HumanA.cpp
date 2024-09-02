@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 23:29:01 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/08/25 09:13:47 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/08/31 16:37:05 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ HumanA::HumanA(const std::string& name, Weapon& weapon)  : name(name), weapon(we
 
 HumanA::~HumanA() 
 {
-    std::cout << "The humanA " << name << "is destroyed" << std::endl;
+    std::cout << "The humanA " << name << " is destroyed" << std::endl;
 }
 
 void HumanA::attack()

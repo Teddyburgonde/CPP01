@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 15:50:31 by tebandam          #+#    #+#             */
-/*   Updated: 2024/08/29 13:29:08 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:57:53 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int main(int argc, char **argv)
 {
     Replace replace;
 
-    using namespace std;
     std::ifstream infile;
     std::ofstream outfile;
     std::string input_file;
@@ -32,8 +31,9 @@ int main(int argc, char **argv)
 
     input_file = argv[1];
     s1 = argv[2];
+    if (!s1[0])
+        return (replace.print_error("Error invalid argument"));
     s2 = argv[3];
-    // Créer le nom du fichier de sortie
     output_file = input_file + ".replace";
     if (replace.open_infile(infile, input_file) == 1)
          return (replace.print_error("Error opening the input file!"));
@@ -44,11 +44,11 @@ int main(int argc, char **argv)
         pos = 0;
         while ((pos = line.find(s1, pos)) != std::string::npos)
 	    {
-            line.erase(pos, s1.length()); // supprine s1 de la ligne
-            line.insert(pos, s2); // insert le contenu de s2 a la place
-            pos += s2.length(); // Avance la position pour éviter de trouver la même occurrence
+            line.erase(pos, s1.length());
+            line.insert(pos, s2);
+            pos += s2.length();
         }
-        outfile << line << std::endl;  // Écrire la ligne modifiée dans le fichier de sortie
+        outfile << line << std::endl;
     }
     infile.close();
     outfile.close();
